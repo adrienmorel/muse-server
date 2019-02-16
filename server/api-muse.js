@@ -8,6 +8,7 @@ const Router = express.Router();
 
 const moment = require("moment");
 
+
 class ApiMuse {
     constructor(socket) {
 
@@ -46,7 +47,7 @@ class ApiMuse {
                 })
                 .then(musesCollection => {
                     muse = new Muse(musesCollection);
-                    return muse.createMuse(userID, partyID, progress, time);
+                    return muse.createMuse(userID, partyID, progress, this.time);
                 })
                 .then(newHistorique => {
                     database.closeDB();

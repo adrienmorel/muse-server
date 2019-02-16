@@ -1,7 +1,7 @@
 const mongo = require("mongodb");
 const config = require(`${process.cwd()}/config/config`);
 const MongoClient = mongo.MongoClient;
-const url = `mongodb://${config.databaseConfig.database.host}:${config.databaseConfig.database.port}/${config.databaseConfig.database.name}`;
+const url = `mongodb://${config.databaseConfig.database.username}:${config.databaseConfig.database.password}@${config.databaseConfig.database.host}`;
 class DB {
     constructor() {
         const that = this;
